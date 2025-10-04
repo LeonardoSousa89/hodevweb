@@ -449,3 +449,92 @@ function checkIfFormFieldIsEmptyOrIsValid() {
 
   return { result: true };
 }
+
+// ============================
+// Mobile Navigation Controller
+// ============================
+class MobileNavigation {
+  constructor() {
+    this.navToggle = document.querySelector('.nav__toggle');
+    this.navList = document.querySelector('.nav__list');
+    this.navOverlay = this.createOverlay();
+    this.isOpen = false;
+    
+    this.init();
+  }
+
+  createOverlay() {
+    const overlay = document.createElement('div');
+    overlay.className = 'nav__overlay';
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  init() {
+    this.navToggle.addEventListener('click', () => this.toggleMenu());
+    this.navOverlay.addEventListener('click', () => this.closeMenu());
+    
+    // Fechar menu ao clicar em links
+    this.navList.addEventListener('click', (e) => {
+      if (e.target.classList.contains('nav__link')) {
+        this.closeMenu();
+      }
+    });
+
+    // Fechar menu com ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.closeMenu();
+      }
+    });
+
+    // Melhorar acessibilidade
+    this.navToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.toggleMenu();
+      }
+    });
+  }
+
+  toggleMenu() {
+    if (this.isOpen) {
+      this.closeMenu();
+    } else {
+      this.openMenu();
+    }
+  }
+
+  openMenu() {
+    this.navList.classList.add('is-open');
+    this.navOverlay.classList.add('is-visible');
+    this.navToggle.setAttribute('aria-expanded', 'true');
+    this.isOpen = true;
+    
+    // Prevenir scroll do body
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeMenu() {
+    this.navList.classList.remove('is-open');
+    this.navOverlay.classList.remove('is-visible');
+    this.navToggle.setAttribute('aria-expanded', 'false');
+    this.isOpen = false;
+    
+    // Restaurar scroll do body
+    document.body.style.overflow = '';
+  }
+}
+
+// ============================
+// Inicialização quando DOM estiver pronto
+// ============================
+document.addEventListener('DOMContentLoaded', () => {
+  // Inicializar navegação mobile
+  new MobileNavigation();
+
+  // Seu código existente continua aqui...
+  const nameInput = document.getElementById("nome");
+  const emailInput = document.getElementById("email");
+  // ... resto do seu código JavaScript existente
+});
