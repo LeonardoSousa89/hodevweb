@@ -82,7 +82,6 @@ body.page {
   gap: 16px;
   padding: 22px;
   width: 100%;
-  border: solid 1px goldenrod;
 }
 
 .header__brand {
@@ -112,7 +111,7 @@ body.page {
 
 .nav {
   /* margin: 0 auto; */
-  border: solid 1px red;
+  /* border: solid 1px red; */
 }
 
 .nav__toggle {
@@ -138,7 +137,7 @@ body.page {
   display: flex;
   gap: clamp(18px, 3vw, 36px);
   padding: 0;
-  margin: 0;
+  margin-top: 10px;
 }
 
 .nav__link {
@@ -676,14 +675,9 @@ body.page {
     flex-direction: column;
   }
 
-  .header__container {
-    /* justify-content: space-between; */
-  }
-
   .nav__toggle {
     display: flex;
     flex-direction: column;
-     border: solid 2px gold;
   }
 
   .nav__list {
@@ -706,7 +700,7 @@ body.page {
 
 .whatsapp-button {
   position: fixed;
-  top: 360px;
+  top: 450px;
   right: 50px;
   z-index: 1000;
 }
@@ -717,13 +711,9 @@ body.page {
 }
 
 .logo {
-  /* position: fixed; */
-  /* top: 10px;
-  left: 10px; */
   width: 50px;
   height: auto;
    border: solid 2px gray;
-  /* z-index: 1000; */
 }
 
 .title-image {
