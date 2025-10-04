@@ -27,11 +27,14 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 body.page {
@@ -79,7 +82,7 @@ body.page {
 .header__container {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   gap: 16px;
   padding: 22px;
   width: 100%;
@@ -232,7 +235,6 @@ body.page {
   gap: clamp(28px, 6vw, 54px);
   align-items: center;
   width: 100%;
-  /* border: solid 1px red; */
 }
 
 .hero__container > *:first-child {
@@ -245,6 +247,7 @@ body.page {
 
 .hero__title {
   margin: 0 0 10px;
+  margin-left: 2rem;
   font-size: clamp(36px, 4.5vw + 8px, 56px);
   font-weight: 800;
   line-height: 1.05;
@@ -253,6 +256,7 @@ body.page {
 .hero__subtitle {
   color: var(--text-dim);
   margin: 0 0 26px;
+  margin-left: 2rem;
 }
 
 .hero__art {
@@ -271,6 +275,7 @@ body.page {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .card {
@@ -482,6 +487,7 @@ body.page {
   align-items: center;
   flex-wrap: wrap;
   gap: 26px;
+  width: 100%;
 }
 
 .price {
@@ -576,6 +582,7 @@ body.page {
   color: #0a1a33;
   padding: 42px 0 56px;
   box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.06);
+  width: 100%;
 }
 
 .about-contact__container {
@@ -650,6 +657,7 @@ body.page {
      ========================================================================== */
 .footer {
   padding: 26px 0 40px;
+  width: 100%;
 }
 
 .footer__container {
@@ -670,6 +678,12 @@ body.page {
 @media (max-width: 960px) {
   .hero__container {
     flex-direction: column;
+    overflow: hidden;
+  }
+
+  .hero__title {
+    margin-top: 5rem;
+    margin-left: 0;
   }
 
   .pricing__grid,
@@ -716,7 +730,7 @@ body.page {
 .logo {
   width: 50px;
   height: auto;
-   border: solid 2px gray;
+  border: solid 2px gray;
 }
 
 .title-image {
@@ -834,5 +848,26 @@ footer {
 @media screen and (max-width: 640px) {
   .visible {
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero__title {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .hero__art {
+    position: relative;
+    padding: 0;
+  }
+  .hero_laptop {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .hero__title {
+    font-size: 18px;
   }
 }
