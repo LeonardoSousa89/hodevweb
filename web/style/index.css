@@ -73,15 +73,14 @@ body.page {
   backdrop-filter: saturate(140%) blur(8px);
   background: rgba(7, 17, 41, 0.6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  border: solid 4px darkred;
 }
 
 .header__container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between; /* ← MUDAR para space-between */
   gap: 16px;
-  padding: 18px 0;
+  padding: 22px;
   width: 100%;
   border: solid 1px goldenrod;
 }
@@ -112,7 +111,8 @@ body.page {
 }
 
 .nav {
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  border: solid 1px red;
 }
 
 .nav__toggle {
@@ -677,7 +677,7 @@ body.page {
   }
 
   .header__container {
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
 
   .nav__toggle {
