@@ -231,6 +231,8 @@ body.page {
   flex-wrap: wrap;
   gap: clamp(28px, 6vw, 54px);
   align-items: center;
+  width: 100%;
+  /* border: solid 1px red; */
 }
 
 .hero__container > *:first-child {
