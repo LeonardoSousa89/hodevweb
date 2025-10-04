@@ -67,7 +67,8 @@ body.page {
      Header (BEM)
      ========================================================================== */
 .header {
-  position: sticky;
+  position: fixed;
+  width: 100vw;
   top: 0;
   z-index: 50;
   backdrop-filter: saturate(140%) blur(8px);
@@ -78,7 +79,7 @@ body.page {
 .header__container {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* ← MUDAR para space-between */
+  justify-content: space-between; 
   gap: 16px;
   padding: 22px;
   width: 100%;
